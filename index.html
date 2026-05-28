@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Gaia Retreat – Loft in Sabana, San José, Costa Rica</title>
+  <meta name="description" content="Gaia Retreat is a stylish loft accommodation in the Sabana neighborhood of San José, Costa Rica. Book your stay for a comfortable, well-located base in the heart of the city." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --sand: #f5f0e8;
+      --earth: #8c6e4f;
+      --forest: #3d5a47;
+      --cream: #faf7f2;
+      --dark: #1e1c18;
+      --muted: #6b6558;
+      --border: rgba(140,110,79,0.18);
+    }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'DM Sans', sans-serif; background: var(--cream); color: var(--dark); font-size: 16px; line-height: 1.6; }
+    nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; background: rgba(250,247,242,0.92); backdrop-filter: blur(8px); border-bottom: 1px solid var(--border); padding: 0 2rem; height: 60px; display: flex; align-items: center; justify-content: space-between; }
+    .nav-logo { font-family: 'Cormorant Garamond', serif; font-size: 22px; font-weight: 600; color: var(--forest); text-decoration: none; letter-spacing: 0.02em; }
+    .nav-links { display: flex; gap: 1.8rem; list-style: none; }
+    .nav-links a { font-size: 13px; text-decoration: none; color: var(--muted); letter-spacing: 0.04em; text-transform: uppercase; font-weight: 500; transition: color 0.2s; }
+    .nav-links a:hover { color: var(--forest); }
+    .hero { padding-top: 60px; min-height: 88vh; display: flex; align-items: center; justify-content: center; text-align: center; background: linear-gradient(to bottom, rgba(250,247,242,0.15) 0%, rgba(245,240,232,0.85) 100%), url('https://images.unsplash.com/photo-1631049307264-da0ec9d70304?w=1400&q=80') center/cover no-repeat; padding-left: 2rem; padding-right: 2rem; }
+    .hero-inner { max-width: 720px; }
+    .hero-eyebrow { font-size: 12px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--earth); font-weight: 500; margin-bottom: 1.2rem; }
+    .hero h1 { font-family: 'Cormorant Garamond', serif; font-size: clamp(48px, 7vw, 84px); font-weight: 300; line-height: 1.05; color: var(--dark); margin-bottom: 1.2rem; }
+    .hero h1 em { font-style: italic; color: var(--forest); }
+    .hero-sub { font-size: 16px; color: var(--muted); max-width: 500px; margin: 0 auto 2rem; font-weight: 300; }
+    .btn { display: inline-block; padding: 14px 34px; background: var(--forest); color: #fff; text-decoration: none; font-size: 13px; letter-spacing: 0.08em; text-transform: uppercase; font-weight: 500; border-radius: 2px; transition: background 0.2s, transform 0.15s; }
+    .btn:hover { background: #2d4234; transform: translateY(-1px); }
+    .btn-outline { background: transparent; color: var(--forest); border: 1.5px solid var(--forest); margin-left: 12px; }
+    .btn-outline:hover { background: var(--forest); color: #fff; }
+    section { padding: 80px 2rem; }
+    .section-inner { max-width: 960px; margin: 0 auto; }
+    .section-label { font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--earth); font-weight: 500; margin-bottom: 0.6rem; }
+    .section-title { font-family: 'Cormorant Garamond', serif; font-size: clamp(30px, 4vw, 44px); font-weight: 400; color: var(--dark); line-height: 1.15; margin-bottom: 1.2rem; }
+    .divider { width: 48px; height: 1px; background: var(--earth); margin-bottom: 2rem; }
+    #about { background: var(--sand); }
+    .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center; }
+    .about-text p { color: var(--muted); font-weight: 300; margin-bottom: 1.2rem; }
+    .amenities-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 1.5rem; margin-top: 2.5rem; }
+    .amenity-card { border: 1px solid var(--border); border-radius: 4px; padding: 1.4rem 1.2rem; background: #fff; }
+    .amenity-icon { font-size: 22px; margin-bottom: 0.6rem; }
+    .amenity-card h4 { font-size: 14px; font-weight: 500; color: var(--dark); margin-bottom: 0.3rem; }
+    .amenity-card p { font-size: 13px; color: var(--muted); font-weight: 300; }
+    #policies { background: var(--sand); }
+    .policy-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2.5rem; margin-top: 2rem; }
+    .policy-box { border: 1px solid var(--border); border-radius: 4px; padding: 1.6rem; background: #fff; }
+    .policy-box h3 { font-family: 'Cormorant Garamond', serif; font-size: 20px; font-weight: 600; color: var(--forest); margin-bottom: 0.8rem; }
+    .policy-box ul { list-style: none; color: var(--muted); font-size: 14px; font-weight: 300; }
+    .policy-box ul li { padding: 5px 0; border-bottom: 1px solid var(--border); }
+    .policy-box ul li:last-child { border-bottom: none; }
+    .policy-box ul li::before { content: '—'; color: var(--earth); margin-right: 8px; font-size: 12px; }
+    #contact { background: var(--forest); }
+    #contact .section-label { color: rgba(255,255,255,0.5); }
+    #contact .section-title { color: #fff; }
+    #contact .divider { background: rgba(255,255,255,0.3); }
+    .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; margin-top: 2rem; }
+    .contact-info p { color: rgba(255,255,255,0.7); font-weight: 300; margin-bottom: 1.6rem; }
+    .contact-item { display: flex; flex-direction: column; margin-bottom: 1.2rem; }
+    .contact-item span:first-child { font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; color: rgba(255,255,255,0.45); font-weight: 500; margin-bottom: 3px; }
+    .contact-item a, .contact-item span:last-child { color: rgba(255,255,255,0.85); text-decoration: none; font-size: 15px; font-weight: 300; }
+    .contact-item a:hover { color: #fff; text-decoration: underline; }
+    .booking-links { display: flex; flex-direction: column; gap: 0.8rem; }
+    .booking-link { display: block; padding: 14px 22px; border: 1px solid rgba(255,255,255,0.25); border-radius: 3px; color: rgba(255,255,255,0.85); text-decoration: none; font-size: 14px; font-weight: 400; transition: background 0.2s, border-color 0.2s; }
+    .booking-link:hover { background: rgba(255,255,255,0.08); border-color: rgba(255,255,255,0.5); }
+    footer { background: var(--dark); padding: 2rem; text-align: center; font-size: 12px; color: rgba(255,255,255,0.35); }
+    footer a { color: rgba(255,255,255,0.5); text-decoration: none; }
+    footer a:hover { color: rgba(255,255,255,0.8); }
+    .footer-links { display: flex; justify-content: center; gap: 1.5rem; margin-top: 0.5rem; }
+    @media (max-width: 680px) {
+      .nav-links { display: none; }
+      .about-grid, .policy-grid, .contact-grid { grid-template-columns: 1fr; gap: 2rem; }
+      .btn-outline { margin-left: 0; margin-top: 10px; }
+    }
+  </style>
+</head>
+<body>
+
+<nav>
+  <a href="#" class="nav-logo">Gaia Retreat</a>
+  <ul class="nav-links">
+    <li><a href="#about">About</a></li>
+    <li><a href="#amenities">Amenities</a></li>
+    <li><a href="#policies">Policies</a></li>
+    <li><a href="#contact">Contact & Book</a></li>
+  </ul>
+</nav>
+
+<section class="hero">
+  <div class="hero-inner">
+    <p class="hero-eyebrow">Sabana, San José &middot; Costa Rica</p>
+    <h1>A loft retreat<br/>in the <em>heart</em> of the city</h1>
+    <p class="hero-sub">A thoughtfully designed loft in Sabana — one of San José's most sought-after neighborhoods — perfect for travelers who want style, comfort, and easy access to everything.</p>
+    <a href="#contact" class="btn">Book Your Stay</a>
+    <a href="#about" class="btn btn-outline">Learn More</a>
+  </div>
+</section>
+
+<section id="about">
+  <div class="section-inner">
+    <div class="about-grid">
+      <div class="about-text">
+        <p class="section-label">About the Property</p>
+        <h2 class="section-title">Your home base<br/>in San José</h2>
+        <div class="divider"></div>
+        <p>Gaia Retreat is a modern loft-style accommodation in the Sabana neighborhood, ideally located near La Sabana Metropolitan Park — the green lung of San José — and just minutes from the financial district, restaurants, museums, and international airport connections.</p>
+        <p>The space is designed for guests who appreciate clean lines, natural light, and thoughtful details. Everything you need for a comfortable stay is provided, whether you're visiting for business or leisure.</p>
+        <p>Hosted by Diego, who is available to assist with local tips, transport recommendations, and anything that makes your stay more comfortable.</p>
+      </div>
+      <div style="border-radius: 4px; overflow: hidden; min-height: 320px; background: #e0d8cc;">
+        <img src="https://images.unsplash.com/photo-1540518614846-7eded433c457?w=700&q=80" alt="Modern loft interior at Gaia Retreat" style="width:100%; height:100%; object-fit:cover; display:block; min-height:320px;" />
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="amenities">
+  <div class="section-inner">
+    <p class="section-label">What's Included</p>
+    <h2 class="section-title">Amenities & Services</h2>
+    <div class="divider"></div>
+    <div class="amenities-grid">
+      <div class="amenity-card"><div class="amenity-icon">🛜</div><h4>High-Speed Wi-Fi</h4><p>Fiber broadband suitable for remote work and streaming.</p></div>
+      <div class="amenity-card"><div class="amenity-icon">❄️</div><h4>Air Conditioning</h4><p>Climate control for a comfortable stay year-round.</p></div>
+      <div class="amenity-card"><div class="amenity-icon">🍳</div><h4>Equipped Kitchen</h4><p>Full kitchen with appliances, cookware, and essentials.</p></div>
+      <div class="amenity-card"><div class="amenity-icon">📺</div><h4>Smart TV</h4><p>Streaming-ready TV with major platforms available.</p></div>
+      <div class="amenity-card"><div class="amenity-icon">🚿</div><h4>Private Bathroom</h4><p>Clean, well-stocked bathroom with quality toiletries.</p></div>
+      <div class="amenity-card"><div class="amenity-icon">🔐</div><h4>Secure Access</h4><p>Self check-in with digital lock and 24/7 building security.</p></div>
+      <div class="amenity-card"><div class="amenity-icon">🌿</div><h4>Sabana Location</h4><p>Steps from La Sabana park, restaurants, and city transport.</p></div>
+      <div class="amenity-card"><div class="amenity-icon">🧺</div><h4>Laundry Access</h4><p>Washer and dryer available for guest use.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="policies">
+  <div class="section-inner">
+    <p class="section-label">Guest Information</p>
+    <h2 class="section-title">Policies & Guidelines</h2>
+    <div class="divider"></div>
+    <div class="policy-grid">
+      <div class="policy-box">
+        <h3>Cancellation & Refund Policy</h3>
+        <ul>
+          <li>Free cancellation up to 7 days before check-in — full refund</li>
+          <li>Cancellation 3–6 days before check-in — 50% refund of the nightly rate</li>
+          <li>Cancellation less than 72 hours before check-in — no refund</li>
+          <li>Early departures are non-refundable</li>
+          <li>No-shows treated as cancellations within 72 hours — non-refundable</li>
+          <li>Refunds issued via original payment method within 7–10 business days</li>
+        </ul>
+      </div>
+      <div class="policy-box">
+        <h3>House Rules</h3>
+        <ul>
+          <li>Check-in from 3:00 PM &middot; Check-out by 11:00 AM</li>
+          <li>Maximum 2 guests unless otherwise agreed in writing</li>
+          <li>No smoking inside the property</li>
+          <li>No unregistered guests or parties</li>
+          <li>Pets allowed on prior request only</li>
+          <li>Commercial filming requires written authorization</li>
+          <li>Quiet hours from 10:00 PM to 8:00 AM</li>
+        </ul>
+      </div>
+      <div class="policy-box">
+        <h3>Privacy Policy</h3>
+        <ul>
+          <li>We collect name, contact details, and stay information to process your booking</li>
+          <li>Your data is never sold or shared with third parties except as required for booking processing</li>
+          <li>Payment information is handled by secure third-party processors and not stored by us</li>
+          <li>You may request deletion of your data at any time by contacting us</li>
+          <li>Booking platforms have their own independent privacy policies</li>
+        </ul>
+      </div>
+      <div class="policy-box">
+        <h3>Booking Terms</h3>
+        <ul>
+          <li>Full payment collected at the time of booking confirmation</li>
+          <li>Valid government-issued ID required upon check-in</li>
+          <li>Lead guest must be 18 years of age or older</li>
+          <li>Property damage may result in additional charges</li>
+          <li>Gaia Retreat reserves the right to decline bookings at its discretion</li>
+          <li>Costa Rican law governs all accommodation agreements</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="contact">
+  <div class="section-inner">
+    <p class="section-label">Get in Touch</p>
+    <h2 class="section-title">Contact & Book</h2>
+    <div class="divider"></div>
+    <div class="contact-grid">
+      <div class="contact-info">
+        <p>Ready to book your stay at Gaia Retreat? You can reach us directly or book through our listings on your preferred platform. We typically respond within a few hours.</p>
+        <div class="contact-item">
+          <span>Property</span>
+          <span>Gaia Retreat — Loft, Sabana, San José</span>
+        </div>
+        <div class="contact-item">
+          <span>Location</span>
+          <span>Sabana neighborhood, San José, Costa Rica</span>
+        </div>
+        <div class="contact-item">
+          <span>Email</span>
+          <a href="mailto:contact@gaiaretreatsjo.com">contact@gaiaretreatsjo.com</a>
+        </div>
+        <div class="contact-item">
+          <span>Languages</span>
+          <span>English &middot; Español</span>
+        </div>
+      </div>
+      <div>
+        <p style="font-size:13px; letter-spacing:0.1em; text-transform:uppercase; color:rgba(255,255,255,0.45); font-weight:500; margin-bottom:1rem;">Book on your preferred platform</p>
+        <div class="booking-links">
+          <a href="https://www.airbnb.com" class="booking-link">Airbnb →</a>
+          <a href="https://www.booking.com" class="booking-link">Booking.com →</a>
+          <a href="https://www.agoda.com" class="booking-link">Agoda →</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div>&copy; 2025 Gaia Retreat &middot; San José, Costa Rica &middot; All rights reserved</div>
+  <div class="footer-links">
+    <a href="#policies">Privacy Policy</a>
+    <a href="#policies">Cancellation Policy</a>
+    <a href="#contact">Contact</a>
+  </div>
+</footer>
+
+</body>
+</html>
